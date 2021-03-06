@@ -22,7 +22,7 @@ const App = () => {
                 palette: {
                     primary: {
                         // light: will be calculated from palette.primary.main,
-                        main: '#00a6a4',
+                        main: 'blue',
                         contrastText: '#ffffff'
                         // dark: will be calculated from palette.primary.main,
                         // contrastText: will be calculated to contrast with palette.primary.main

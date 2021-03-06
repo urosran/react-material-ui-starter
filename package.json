@@ -21,7 +21,7 @@
     "serve": "^11.3.0"
   },
   "scripts": {
-    "dev": "set PORT=3001 && react-scripts start",
+    "dev": "set PORT=3000 && react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts --max_old_space_size=460 build",
     "test": "react-scripts test --env=jsdom",

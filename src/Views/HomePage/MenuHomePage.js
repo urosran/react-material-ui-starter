@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
                     {/*    <MenuIcon />*/}
                     {/*</IconButton>*/}
                     <Typography variant="h6" className={classes.title}>
-                        efile<strong>buddy</strong>
+                        name<strong>name</strong>
                     </Typography>
                     <Button className={classes.loginButton} color="inherit" variant={"outlined"} onClick={()=>history.push('login')} >Login</Button>
                 </Toolbar>

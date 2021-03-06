@@ -205,7 +205,7 @@ const SignUp = ({history}) => {
             <Grid container direction={'column'} alignItems={'center'} alignContent={'center'}>
 
                 <Grid item>
-                    <Typography variant={'h1'} className={classes.appName}>eFile Buddy</Typography>
+                    <Typography variant={'h1'} className={classes.appName}>app</Typography>
                 </Grid>
                 <Grid item>
                     <Typography className={classes.subtitle}>easy 1099s</Typography>

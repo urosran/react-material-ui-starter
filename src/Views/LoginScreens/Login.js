@@ -101,7 +101,7 @@ const Login = ({history}) => {
             <CssBaseline/>
             <Grid container direction={'column'} alignContent={"center"} alignItems={'center'}>
                 <Grid item>
-                    <Typography variant={'h1'} className={classes.appName}>eFile Buddy</Typography>
+                    <Typography variant={'h1'} className={classes.appName}>app</Typography>
                 </Grid>
                 <Grid item>
                     <Typography className={classes.subtitle}>easiest 1099 filing you could imagine</Typography>

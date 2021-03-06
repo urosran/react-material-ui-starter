@@ -10,18 +10,6 @@ export function getArrayOfObjectsWithRemovedItem(array, itemPropertyName, itemPr
     })
 }
 
-export function getListOfQuestionsForSurvey(questionObjects, surveyObject) {
-    return questionObjects.filter(questionObject => {
-        return questionObject.surveyUid === surveyObject.surveyUid
-    })
-}
-
-export function getListOfAnswersForQuestion(answerObjects, questionObject) {
-    return answerObjects.filter(answerObject => {
-        return answerObject.questionUid === questionObject.questionUid
-    })
-}
-
 export function sortArrayByNumericObjectProperty(array, objectProperty) {
     return array.sort((a, b) => {
 
@@ -44,7 +32,7 @@ export async function updateUserInDb(dispatch, updatedClient, currentUsersIdToke
     return new Promise((res, rej) => {
         axios({
             method: "POST",
-            url: serverUrl + '/updateAccountantClientUser',
+            url: serverUrl + '/updateUserInDb',
             data: {
                 userObject: updatedClient,
                 authToken: currentUsersIdToken,
@@ -56,18 +44,11 @@ export async function updateUserInDb(dispatch, updatedClient, currentUsersIdToke
             dispatch({showLoadingGif: false})
             dispatch({loadingBarProgress: 100})
 
-            if (updatedClient.accountType === enums.ACCOUNTANTS_CLIENT) {
-                updatedClient.hasConfirmedInformation = true
-                // dispatch({userDataObject: updatedClient})
-            }
-            //TODO: add else if to handle updating fields for accountant
-
             res(response.status)
         }).catch(function (error) {
             if (error.response) {
                 dispatch({loadingBarProgress: 100})
                 dispatch({showLoadingGif: false})
-                dispatch({updateAccountantsClient: false})
 
                 rej("Something went wrong")
             }
@@ -176,51 +157,3 @@ export async function setUserDataGlobally(dispatch) {
     });
 }
 
-
-
-export async function sendReminderEmail(userObject, accountTypeToRemind, dispatch) {
-
-    function deduceRouteToRemind() {
-        switch (accountTypeToRemind) {
-            case enums.ACCOUNTANT:
-                return '/remindAccountantToFile'
-            case enums.CONTRACTOR:
-                return '/remindContractor'
-            case enums.ACCOUNTANTS_CLIENT:
-                throw new Error("Not implemented!!!!")
-        }
-    }
-
-    let routeToRemind = deduceRouteToRemind()
-
-    return new Promise((resolve, reject) => {
-        dispatch({showLoadingGif: true})
-        axios({
-            method: "POST",
-            url: serverUrl + routeToRemind,
-            data: {
-                userObject: userObject,
-            }
-        }).then(response => {
-            if (response.status === 200) {
-                dispatch({loadingBarProgress: 100})
-                dispatch({showLoadingGif: false})
-
-                resolve(response.status)
-            }
-        }).catch(function (error) {
-            if (error.response) {
-                dispatch({loadingBarProgress: 100})
-                dispatch({showLoadingGif: false})
-
-                reject()
-            }
-        });
-    })
-}
-
-sendReminderEmail.propTypes = {
-    userObject: PropTypes.object.isRequired,
-    accountTypeToRemind: PropTypes.string.isRequired,
-    dispatch: PropTypes.func.isRequired
-}

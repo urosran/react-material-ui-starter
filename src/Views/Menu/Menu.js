@@ -66,7 +66,7 @@ const Menu = ({doNotRenderOptions, listOfItemsToRender}) => {
                         <MenuIcon/>
                     </IconButton>}
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-                        efile<strong>buddy</strong>
+                        name<strong>name</strong>
                     </Typography>
                     <Button style={{color: 'white'}} onClick={() => handleSignOut()}>Sign out</Button>
                 </Toolbar>
