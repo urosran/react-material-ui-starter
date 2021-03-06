@@ -9,6 +9,8 @@ then to get the  project running execute
 
 Note: the build will fail if you don't have a local `.env` folder 
 with the following contents that you will get from your `console.firebase.com`
+when you create a new project - refer to firebase 
+web client docs on how to create a project
 
 it should look like this:
 REACT_APP_API_KEY=
