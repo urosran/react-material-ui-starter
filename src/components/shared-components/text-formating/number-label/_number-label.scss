@@ -1,0 +1,14 @@
+.number-label-wrap {
+
+    p{
+        font-weight: bold;
+        font-size: 20px;
+        color: $font-color-darkest;
+    }
+    span {
+        font-weight: normal;
+        color: $font-color-lightest;
+        font-size: 10px;
+        margin-left: 5px;
+    }
+}

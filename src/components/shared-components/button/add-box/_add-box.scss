@@ -1,0 +1,29 @@
+.add-box-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    
+    font-weight: 700;
+    color: $confirmation;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+    &.small {
+        font-size: 17px;
+        .icon-wrap {
+            width: 27px;
+        }
+    }
+    &.big {
+        font-size: 26px;
+        .icon-wrap {
+            width: 36px;
+        }
+    }
+    
+    p{
+        margin-left: 10px;
+    }
+}

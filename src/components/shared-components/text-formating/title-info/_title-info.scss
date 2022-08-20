@@ -1,0 +1,19 @@
+.title-info-wrap {
+    color: $font-color-darkest;
+    // font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    p{
+        font-weight: 700;
+    }
+    .title-info-info {
+        color: $font-color-ultralight;
+        margin-left: 10px;
+       
+        .title-info-icon {
+            
+            height: 15px;
+            width:15px;
+        }
+    }
+}

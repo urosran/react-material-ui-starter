@@ -1,0 +1,50 @@
+.user-navigation-wrap {
+    .profile-navigation {
+        padding: 3px;
+        // border: 1px solid $accentColor0;
+        // border-radius: 3px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: 0.2s;
+        max-width: 150px;
+        color:$accentColor0;
+        .profile-navigation-username {
+            text-overflow: ellipsis;
+            overflow: hidden; 
+            width: 140px; 
+            white-space: nowrap;
+        
+        }
+        .profile-navigation-menu {
+            position: absolute;
+            top: 35px;
+            transition: 0.2s;
+            border: 1px solid $accentColor0;
+            padding: 3px;
+            border-radius: 4px;
+            visibility: hidden;
+            color: $shade-dark;
+            min-height: 50px;
+            background-color: white;
+            width: 150px;
+            ul{
+                list-style-type: none;
+            }
+            li {
+                color:$font-color;
+                border-bottom: $font-color-light;
+                width: 100%;
+                margin-bottom: 5px;
+                cursor: pointer;
+            }
+            &:last-child {
+                li {border-bottom: none;}
+            }
+            &.visible {
+                visibility: visible;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.title-date-wrap {
+    // margin-bottom: 50px;
+    .title-date-date{
+        color: $font-color-lightest;
+        font-size: 14px;
+    }
+    &.page-title {
+        font-weight: 700;
+        font-size: 30px;
+        .title-date-date{
+            font-size: 20px;
+            font-weight: 400;
+        }
+    }
+    &.small-title {
+        font-weight: 700;
+        font-size: 18px;
+        .title-date-date {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}

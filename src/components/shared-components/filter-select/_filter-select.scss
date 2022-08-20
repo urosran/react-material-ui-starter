@@ -1,0 +1,32 @@
+.filter-select-wrap {
+    display: flex;
+    
+   
+    
+    &.row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        label {
+            margin-right: 10px;
+        }
+    }
+    &.column {
+        flex-direction: column;
+        align-items: space-between;
+        justify-content: flex-start;
+        label{
+            margin-bottom: 10px;
+        }
+    }
+    .select-field {
+        background-color: white!important;
+        color: $shade-dark;
+        border:1px solid $shade-dark;
+        outline: none;
+        padding: 3px;
+        font-size: 11px;
+        border: 2px solid lime!important;
+        border-radius: 3px;
+    }
+}

@@ -1,0 +1,32 @@
+.side-navigation-wrap {
+    // position: absolute;
+    // top: 108px;
+    // background-color: saddlebrown;
+    color: $font-color;
+    width: 300px;
+    padding: 50px 50px;
+
+    min-height: calc(100vh - 178px);
+    ul {
+        list-style-type: none;
+    }
+    .side-navigation-item {
+        margin-bottom: 20px;
+        a {
+            color: $font-color;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 26px;
+        }
+        &.active {
+            a {
+                color: $font-color-accent;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+    }
+}
