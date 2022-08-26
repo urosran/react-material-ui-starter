@@ -26,6 +26,7 @@ function App() {
         messagingSenderId: process.env.REACT_APP_SENDER_ID,
     });
     const auth = getAuth(firebaseApp);
+
     // TODO: change loggedIn  to true to avoid auth in dev
     const [loggedIn, setLoggedIn] = useState(false)
     // const location = useLocation();
