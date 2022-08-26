@@ -19,7 +19,7 @@ import {getAuth, signOut} from "firebase/auth";
 import {useNavigate} from "react-router-dom";
 
 
-export function DashboardPage() {
+export function HomePage() {
 
     const theme = useTheme();
     const auth = getAuth()
@@ -38,20 +38,10 @@ export function DashboardPage() {
             <ThemeProvider theme={theme}>
                 <Container component="main" maxWidth="xs">
                     <CssBaseline/>
-                    <Button onClick={async () => {
-                        signOut(auth).then(()=>{
-                            console.log('sign out succesful')
-                            navigate('/login')
-                        })
-                        // try {
-                        //     await signOut(auth)
-                        //     navigate('/')
-                        //     console.log('sign out')
-                        // } catch (e) {
-                        //     console.log(e)
-                        // }
+                    <Button onClick={() => {
+                        navigate('/login')
                     }}>
-                        Sign Out
+                        Login
                     </Button>
                     <Box
                         sx={{
@@ -62,7 +52,7 @@ export function DashboardPage() {
                         }}
                     >
                         <Typography variant={"h1"}>
-                            <strong>Dashboard</strong>
+                            <strong>Homepage</strong>
                         </Typography>
 
                     </Box>

@@ -14,8 +14,8 @@ import {createTheme, ThemeProvider} from '@mui/material/styles';
 import {useAutocomplete, useTheme} from "@mui/material";
 import GoogleButton from "react-google-button";
 import {useCallback, useContext, useEffect, useState} from "react";
-import {getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import {getAuth, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider} from "firebase/auth";
+import {useNavigate} from "react-router-dom";
 
 export function LoginPage() {
     const provider = new GoogleAuthProvider();
@@ -35,6 +35,11 @@ export function LoginPage() {
     useEffect(() => {
         const loginFunction = async () => {
             auth.onAuthStateChanged(function (user) {
+                console.log(user===true)
+                if (user) {
+                    console.log('navigating to dash')
+                    navigate('dashboard')
+                }
             });
         };
         loginFunction();

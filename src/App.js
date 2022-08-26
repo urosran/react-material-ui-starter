@@ -2,7 +2,7 @@ import {
     Route,
     Routes,
     Navigate,
-    useLocation,
+    useLocation, useNavigate,
 } from "react-router-dom";
 import {getAuth, onAuthStateChanged} from "firebase/auth";
 import React, {useState} from "react";
@@ -14,6 +14,7 @@ import {BrowserRouter} from 'react-router-dom';
 //pages imports
 import {LoginPage} from "./pages/login-page/login-page";
 import {DashboardPage} from "./pages/dashboard-page/dashboard-page";
+import {HomePage} from "./pages/home-page/home-page";
 
 
 function App() {
@@ -36,7 +37,7 @@ function App() {
             setLoggedIn(true)
         }
     })
-
+    console.log(loggedIn)
     return (
         <div className="App">
             <BrowserRouter>
@@ -47,11 +48,13 @@ function App() {
                             {/*<Route path="/signup" element={<SignUpPage/>}/>*/}
                             <Route path="/dashboard" element={<DashboardPage/>}/>
                             <Route path="*" element={<Navigate to="/dashboard"/>}/>
+                            <Route path="/" element={<HomePage/>}/>
                         </>
                         :
                         <>
                             <Route path="/login" element={<LoginPage/>}/>
                             <Route path="*" element={<Navigate to="/login"/>}/>
+                            <Route path="/" element={<HomePage/>}/>
                         </>
                     }
                 </Routes>
